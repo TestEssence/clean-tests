@@ -1,8 +1,8 @@
-Feature: Abstraction Workshop
+Feature: Abstraction Workshop: Eliminate Distraction
 
-Scenario: Too much details is distraction that kill your efficiency
+Scenario: Products - Add to Cart (Too much details is a distraction that kills your efficiency)
     @bad_example
-    #problem: too detailed instructions slow down the exector or analyser
+    #problem: too detailed instructions significantly slow down the executors and maintainers
     Given the user scrolls the mouse to the "User Name" text box
         And the user clicks on the "User Name" text box
         And the user types the letter "U"
@@ -22,7 +22,7 @@ Scenario: Too much details is distraction that kill your efficiency
     Then the "GenericProduct" product is present in their "Shopping Cart"
 
 
-Scenario: Less details is still a distraction
+Scenario: Products - Add to Cart (Less details is still a distraction)
     @bad_example
     #problem: Test objective is "Shopping Cart" so user credetials are not needed here
     Given the user is logged in as 
@@ -31,20 +31,21 @@ Scenario: Less details is still a distraction
     When the user  adds  "GenericProduct" to their "Shopping Cart"
     Then the "GenericProduct" product is present in their "Shopping Cart"
 
-Scenario: Less details is still a distraction
+Scenario: Products - Add to Cart (Level of abstraction is not normalized)
     @ok_example
     #problem: Test objective is "Shopping Cart" so user type is not essential here
     Given the user is logged in as a "GenericUser"
     When the user adds  "GenericProduct" to their "Shopping Cart"
     Then the "GenericProduct" product is present in their "Shopping Cart"
 
-Scenario: Normalized abstraction
+Scenario: Products - Add to Cart (Normalized Abstraction)
     @ok_example,
     @GenericUser, 
     @AdminUser, 
-    @SellerUser
-    #solution: Test objective is "Shopping Cart" so user type can be 
-    # injected as a context parameter via @tag rather then be a part od scenario
+    @SellerUser,
+    @FacebookUser
+    # Solution: Test objective is "Shopping Cart" so user type can be 
+    # injected as a context parameter via @tag rather then be a part of scenario
     Given the user is logged in 
     When the user adds  "GenericProduct" to their "Shopping Cart"
     Then the "GenericProduct" product is present in their "Shopping Cart"
