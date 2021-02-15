@@ -1,0 +1,18 @@
+{
+  "house": {
+    "state": "Built",
+    "builtBy": "Jack",
+    "malt": { "state": "Eaten", "eatenBy": "rat" },
+    "rat": { "state": "Killed", "killedBy": "cat" },
+    "cat": { "state": "Worried", "worriedBy": "dog" },
+    "dog": { "state": "Tossed", "tossedBy": "cow" }
+  },
+  "cow": { "Horn": { "state": "Crumpled" }, "milkdBy": "maiden" },
+  "maiden": { "state": "Forlorn", "kissedBy": "man" },
+  "man": { "state": "Tattered", "marriedBy": "priest" },
+  "priest": { "state": "Shaven", "wakedBy": "cock" },
+  "cock": { "crowTime": "6:00" },
+  "farmer": {}
+}
+
+
